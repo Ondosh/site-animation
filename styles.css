@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+.section:nth-child(2) { background: #3498db; }
+.section:nth-child(3) { background: #2ecc71; }
+.section:nth-child(5) { background: #3498db; }
+
+/* Начинаются настройки хэдэра*/
+
+.business-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #13147b; /* Официальный синий тон */
+  padding: 15px 0;
+  z-index: 1000; /* Чтобы хедер был выше всех остальных элементов */
+}
+
+.business-header nav ul {
+  list-style: none; /* Убираем точки перед пунктами меню */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between; /* Размещаем элементы симметрично */
+  max-width: 800px; /* Ограничиваем ширину меню */
+  margin: 0 auto; /* Центрируем меню */
+}
+
+.business-header nav ul li {
+  margin: 0;
+}
+
+.business-header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  padding: 10px 20px;
+  font-family: 'Arial', sans-serif; /* Замена шрифта */
+}
+
+.business-header nav ul li a:hover {
+  text-decoration: underline;
+}
+/*Настройки хэдэра закончились*/
+
+.section-horizontal {
+  display: flex;
+  overflow: hidden; /* Скрываем все, что выходит за пределы */
+  align-items: center;
+  justify-content: center;
+  width: 5760px;
+  background-color: #f39c12;
+}
+
+.horizontal-slider {
+  display: flex; /* Точное количество слайдов */
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  width: 100vw; /* Каждый слайд занимает ровно 100% ширины экрана */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  background-color: #9b59b6;
+}
+
+.slide:nth-child(1) {
+  background-color: #8e44ad;
+}
+
+.slide:nth-child(2) {
+  background-color: #2980b9;
+}
+.slide:nth-child(3) {
+  background-color: #2980b9;
+}
