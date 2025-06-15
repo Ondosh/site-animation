@@ -7,22 +7,24 @@ const menuItems = document.querySelectorAll('.business-header nav ul li a');
 const currentIndexDisplay = document.getElementById('currentIndex');
 
 function sleep(ms) {         
-  return new Promise(resolve => setTimeout(resolve, ms)); }  
+  return new Promise(resolve => setTimeout(resolve, ms));  
+}  
 
 function scrollToSection(index) {
   if (index >= 0 && index < sections.length) {
     sections[index].scrollIntoView({ behavior: 'smooth' });
   }
 }
+
 function scrollToHorizontalSlide(index) {
   horizontalSlider.style.transform = `translateX(-${(index) * 100}vw)`;
 }
 
 menuItems.forEach(item => {
   item.addEventListener('click', (event) => {
-      event.preventDefault(); // Предотвращаем переход по ссылке
-      index = item.getAttribute('data-index'); // Получаем индекс из data-index
-      currentIndex = parseInt(item.getAttribute('data-index'), 10); // Обновляем отображение индекса
+      event.preventDefault(); // Prevent default link behavior
+      let index = item.getAttribute('data-index'); // Get index from data-index
+      currentIndex = parseInt(item.getAttribute('data-index'), 10); // Update current index
       horizontalIndex = 0;
       scrollToSection(currentIndex);
       if (currentIndex === 3) {
@@ -39,30 +41,30 @@ menuItems.forEach(item => {
 });
 
 window.addEventListener('wheel', (event) => {
-  if (currentIndex === 2) { // Если находимся на третьем слайде
+  if (currentIndex === 2) { // If we are on the third section
     if (event.deltaY > 0 && horizontalIndex < totalHorizontalSlides - 1) {
-      // Прокрутка вправо (вперед по горизонтальным слайдам)
+      // Scroll right (next horizontal slide)
       horizontalIndex++;
       scrollToHorizontalSlide(horizontalIndex);
     } else if (event.deltaY < 0 && horizontalIndex > 0) {
-      // Прокрутка влево (назад по горизонтальным слайдам)
+      // Scroll left (previous horizontal slide)
       horizontalIndex--;
       scrollToHorizontalSlide(horizontalIndex);
     } else if (event.deltaY > 0 && horizontalIndex === totalHorizontalSlides - 1) {
-      // Если все горизонтальные слайды пролистаны, переходим на 4 секцию
+      // If all horizontal slides have been scrolled, move to section 4
       currentIndex++;
       scrollToSection(currentIndex);
     } else if (event.deltaY < 0 && horizontalIndex === 0) {
-      // Если на первом горизонтальном слайде и прокручиваем вверх — возвращаемся на 2 секцию
+      // If on the first horizontal slide and scrolling up — go back to section 2
       currentIndex--;
       scrollToSection(currentIndex);
     }
   } else {
     if (event.deltaY > 0 && currentIndex < sections.length - 1) {
-      // Прокрутка вниз по вертикальным секциям
+      // Scroll down through vertical sections
       currentIndex++;
     } else if (event.deltaY < 0 && currentIndex > 0) {
-      // Прокрутка вверх по вертикальным секциям
+      // Scroll up through vertical sections
       currentIndex--;
     }
     scrollToSection(currentIndex);
