@@ -2,6 +2,7 @@ body {
   margin: 0;
   overflow: hidden;
 }
+
 .section {
   height: 100vh;
   display: flex;
@@ -10,30 +11,39 @@ body {
   font-size: 2rem;
   color: white;
 }
-.section:nth-child(2) { background: #3498db; }
-.section:nth-child(3) { background: #2ecc71; }
-.section:nth-child(5) { background: #3498db; }
 
-/* Начинаются настройки хэдэра*/
+.section:nth-child(2) {
+  background: #3498db;
+}
+
+.section:nth-child(3) {
+  background: #2ecc71;
+}
+
+.section:nth-child(5) {
+  background: #3498db;
+}
+
+/* Header styles start */
 
 .business-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #13147b; /* Официальный синий тон */
+  background-color: #13147b; /* Official dark blue tone */
   padding: 15px 0;
-  z-index: 1000; /* Чтобы хедер был выше всех остальных элементов */
+  z-index: 1000; /* Keep header above other elements */
 }
 
 .business-header nav ul {
-  list-style: none; /* Убираем точки перед пунктами меню */
+  list-style: none; /* Remove bullet points from menu items */
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: space-between; /* Размещаем элементы симметрично */
-  max-width: 800px; /* Ограничиваем ширину меню */
-  margin: 0 auto; /* Центрируем меню */
+  justify-content: space-between; /* Distribute items evenly */
+  max-width: 800px; /* Limit menu width */
+  margin: 0 auto; /* Center the menu */
 }
 
 .business-header nav ul li {
@@ -47,17 +57,18 @@ body {
   font-weight: bold;
   display: block;
   padding: 10px 20px;
-  font-family: 'Arial', sans-serif; /* Замена шрифта */
+  font-family: 'Arial', sans-serif; /* Font change */
 }
 
 .business-header nav ul li a:hover {
   text-decoration: underline;
 }
-/*Настройки хэдэра закончились*/
+
+/* Header styles end */
 
 .section-horizontal {
   display: flex;
-  overflow: hidden; /* Скрываем все, что выходит за пределы */
+  overflow: hidden; /* Hide anything outside of the container */
   align-items: center;
   justify-content: center;
   width: 5760px;
@@ -65,12 +76,12 @@ body {
 }
 
 .horizontal-slider {
-  display: flex; /* Точное количество слайдов */
+  display: flex;
   transition: transform 0.5s ease-in-out;
 }
 
 .slide {
-  width: 100vw; /* Каждый слайд занимает ровно 100% ширины экрана */
+  width: 100vw; /* Each slide takes exactly 100% screen width */
   height: 100vh;
   display: flex;
   align-items: center;
@@ -87,6 +98,7 @@ body {
 .slide:nth-child(2) {
   background-color: #2980b9;
 }
+
 .slide:nth-child(3) {
   background-color: #2980b9;
 }
