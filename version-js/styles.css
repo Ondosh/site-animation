@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  color: white;
+}
+
+.section:nth-child(2) { background: #3498db; }
+.section:nth-child(3) { background: #2ecc71; }
+.section:nth-child(5) { background: #3498db; }
+
+/* ── Header ── */
+.business-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #13147b;
+  padding: 12px 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.business-header nav ul {
+  list-style: none;
+  padding: 0 16px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  flex-wrap: wrap;               /* перенос на мелких экранах */
+  gap: 4px;
+}
+
+.business-header nav ul li {
+  margin: 0;
+}
+
+.business-header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: clamp(13px, 2vw, 20px); /* масштабируется с шириной экрана */
+  font-weight: bold;
+  display: block;
+  padding: 8px 12px;
+  font-family: 'Arial', sans-serif;
+  white-space: nowrap;
+}
+
+.business-header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ── Horizontal section ── */
+.section-horizontal {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  /* убрана жёстко захардкоженная width: 5760px */
+  background-color: #f39c12;
+  width: 100vw;
+}
+
+.horizontal-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100vw;              /* min-width вместо width для надёжности */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  color: white;
+  flex-shrink: 0;                /* слайды не сжимаются */
+}
+
+.slide:nth-child(1) { background-color: #8e44ad; }
+.slide:nth-child(2) { background-color: #2980b9; }
+.slide:nth-child(3) { background-color: #2980b9; }
+
+/* ── Мобильные устройства (≤ 480px) ── */
+@media (max-width: 480px) {
+  .business-header nav ul {
+    justify-content: center;
+    gap: 0;
+  }
+
+  .business-header nav ul li a {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+}
+
+/* ── Планшеты (481px – 768px) ── */
+@media (min-width: 481px) and (max-width: 768px) {
+  .business-header nav ul {
+    max-width: 100%;
+    justify-content: space-evenly;
+  }
+}
