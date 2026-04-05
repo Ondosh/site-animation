@@ -10,7 +10,7 @@
 html {
 	scroll-behavior: smooth;
 	scroll-padding-top: 50px;
-	scroll-snap-type: y proximity;
+	scroll-snap-type: y mandatory;
 	overflow-y: scroll;
 	height: 100%;
 }
@@ -24,13 +24,17 @@ body{
 	font-size: 1.5rem;
 }
 
+#mainContent{
+	margin-top: 20vh;
+}
 .sectionDiv{
 	min-width: 99vw;
-	min-height: 100vh;
+	height: 95vh;
 	justify-content: center;
 	align-content: center;
 	scroll-snap-align: center;
 	scroll-snap-stop: always;
+	padding: 1rem;
 }
 
 .worksDiv{
@@ -39,10 +43,11 @@ body{
 	flex: 0 0 100vw;
 	display: flex;
 	justify-content: center;
-	min-width: 100vw;
-	min-height: 100vh;
+	width: inherit;
+	height: inherit;
 	align-items: center;
 	box-sizing: border-box;
+	padding: 1rem;
 }
 
 #main{
@@ -57,12 +62,13 @@ body{
 	display: flex;
 	flex-direction: row;
 	background-color: #8f5f32;
-	scroll-snap-type: x proximity;
+	scroll-snap-type: x mandatory;
 	scrollbar-width: none;
 	scroll-behavior: smooth;
 	scrollbar-width: none;
-	min-height: 100vh;
+	height: 95vh;
 	align-items: center;
+	
 }
 
 #contacts{
@@ -78,19 +84,21 @@ body{
 	position: fixed;
 	top: 0;
 	left: 0;
-	height: 10vh;
-	align-content: center;
+	height: 20vh;
 	border-bottom: 1px solid #ff9470;
+	align-content: center;
+	padding: 0.3rem;
 }
 #navbar ul{
-	margin: 0;
-	padding: 0;
 	display: flex;
+	gap: 1rem;
+	font-size: 0.9rem;
 	justify-content: center;
-	gap: 10rem;
 }
 #navbar li {
 	display: inline;
+	align-content: center;
+	padding: 0.2rem;
 }
 
 a{
@@ -100,4 +108,81 @@ a{
 a:hover{
 	color: #ff9470;
 	text-shadow: 0 0 20px #ff9470;
+}
+
+@media (min-height: 240px){
+	#mainContent{
+		margin-top: 30vh;
+	}
+	.sectionDiv{
+		height: 80vh;
+	}
+	#work{
+		height: 80vh;
+	}
+	#navbar{
+		height: 30vh;
+	}
+}
+
+@media (min-height: 480px){
+	#mainContent{
+		margin-top: 20vh;
+	}
+	.sectionDiv{
+		height: 93vh;
+	}
+	#work{
+		height: 93vh;
+	}
+	#navbar{
+		height: 20vh;
+	}
+}
+
+@media (min-height: 720px){
+	#mainContent{
+		margin-top: 15vh;
+	}
+	#navbar{
+		height: 15vh;
+	}
+}
+
+@media ((min-width: 960px) and (min-height: 600px)){
+	body{
+		font-size: 2.5rem;
+	}
+	#mainContent{
+		margin-top: 15vh;
+	}
+	#navbar{
+		height: 15vh;
+	}
+	#navbar ul{
+		gap: 2rem;
+		font-size: 1.5rem;
+	}
+}
+
+@media ((min-width: 712px) and (min-height: 1024px)){
+	body{
+		font-size: 2.5rem;
+	}
+	#mainContent{
+		margin-top: 15vh;
+	}
+	#navbar{
+		height: 15vh;
+	}
+	#navbar ul{
+		gap: 2rem;
+		font-size: 1.7rem;
+	}
+	.sectionDiv{
+		height: 97vh;
+	}
+	#work{
+		height: 97vh;
+	}
 }
